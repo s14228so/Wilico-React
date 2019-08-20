@@ -4,20 +4,12 @@ import Todo from "../types/todo";
 import axios from "axios";
 const Home: React.SFC = (): JSX.Element => {
   const [todos, setTodos] = useState<Todo[]>([]);
-  // useEffect(() => {
-  //   const data: Promise<any> = axios.get(
-  //     "https://jsonplaceholder.typicode.com/todos?_limit=10"
-  //   );
-  //   setTodos({ data });
-  //   console.log(todos);
-  // });
   useEffect(() => {
     async () => {
       const { data }: any = await axios.get(
         "https://jsonplaceholder.typicode.com/todos?_limit=10"
       );
       setTodos(data);
-      console.log(todos);
     };
   });
 

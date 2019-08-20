@@ -6,7 +6,7 @@ import { remove, filter } from "../actions";
 
 const mapStateToProps = state => {
   return {
-    todos: state.todos
+    todos: state.plans
   };
 };
 

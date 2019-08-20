@@ -8,7 +8,6 @@ import thunk from "redux-thunk";
 const middleware = [thunk];
 const store = createStore(rootReducer, applyMiddleware(...middleware));
 
-console.log(process.env.REACT_APP_API_KEY);
 ReactDOM.render(
   <Provider store={store}>
     <App />

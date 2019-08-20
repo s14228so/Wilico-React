@@ -1,16 +1,13 @@
+import axios from "axios";
 import { db } from "../plugins/firebase";
-
 export const init = () => async dispatch => {
   let todos;
-  const snapshot = await db.collection("todos").get();
-  console.log(snapshot);
-  todos = snapshot.docs.map(item => ({
-    id: item.id,
-    ...item.data()
-  }));
-  dispatch({
-    type: "INIT",
-    payload: todos
+  axios.get("http://localhost:8080/plans").then(res => {
+    todos = res.data;
+    dispatch({
+      type: "INIT",
+      payload: todos
+    });
   });
 };
 

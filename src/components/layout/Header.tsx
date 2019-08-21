@@ -11,7 +11,7 @@ const Header = () => {
 
   const links = [
     {
-      title: "Home",
+      title: "プラン一覧",
       path: "/"
     },
     {
@@ -19,8 +19,8 @@ const Header = () => {
       path: "/about"
     },
     {
-      title: "Todo",
-      path: "/todo"
+      title: "プラン作成",
+      path: "/planCreate"
     }
   ];
 

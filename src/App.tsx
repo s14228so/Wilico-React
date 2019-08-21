@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { FunctionComponent, useState, useEffect } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import About from "./pages/About";
-import TodoList from "./containers/TodoList";
+import Plans from "./containers/Plans";
 import Header from "./components/layout/Header";
 import Home from "./pages/Home";
 import AddTodo from "./containers/AddTodo";
@@ -29,7 +29,7 @@ const App: FunctionComponent = (): JSX.Element => {
           render={props => (
             <React.Fragment>
               <AddTodo />
-              <TodoList />
+              <Plans />
             </React.Fragment>
           )}
         />

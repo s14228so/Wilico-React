@@ -1,6 +1,7 @@
 import React from "react";
 import Icon from "@material-ui/core/Icon";
 import { withRouter } from "react-router";
+import Plan from "../types/plan";
 const one = {
   background: "lightgray",
   borderBottom: "1px #000 dotted",
@@ -9,13 +10,13 @@ const one = {
 
   padding: "10px 20px"
 };
-const Plan = ({ todo, remove, history }) => {
-  const pushRouter = (id: number) => {
-    history.push("/plan");
+const PlanOne = ({ plan, remove, history }) => {
+  const pushRouter = (plan: Plan) => {
+    history.push("/plan", [plan]);
   };
   return (
-    <div style={one} onClick={() => pushRouter(todo.id)}>
-      {todo.title}
+    <div style={one} onClick={() => pushRouter(plan)}>
+      {plan.title}
       <Icon
         style={{
           fontSize: "18px",
@@ -23,7 +24,7 @@ const Plan = ({ todo, remove, history }) => {
           cursor: "pointer",
           lineHeight: "25px"
         }}
-        onClick={() => remove(todo.id)}
+        onClick={() => remove(plan.id)}
         fontSize="large"
       >
         delete
@@ -32,4 +33,4 @@ const Plan = ({ todo, remove, history }) => {
   );
 };
 
-export default withRouter(Plan);
+export default withRouter(PlanOne);

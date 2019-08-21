@@ -4,6 +4,7 @@ import { FunctionComponent, useState, useEffect } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import About from "./pages/About";
 import Plans from "./containers/Plans";
+import IndividualPlan from "./components/IndivisualPlan";
 import Header from "./components/layout/Header";
 import Home from "./pages/Home";
 import AddTodo from "./containers/AddTodo";
@@ -25,7 +26,7 @@ const App: FunctionComponent = (): JSX.Element => {
         <Header />
         <Route exact path="/" component={Plans} />
         <Route path="/about" component={About} />
-        <Route path="/plan" component={Plan} />
+        <Route path="/plan" component={IndividualPlan} />
         <Route
           path="/todo"
           render={props => (

@@ -1,35 +1,13 @@
-import React from "react";
-import Icon from "@material-ui/core/Icon";
+import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router";
-const one = {
-  background: "lightgray",
-  borderBottom: "1px #000 dotted",
-  width: "50%",
-  margin: "10px auto",
 
-  padding: "10px 20px"
-};
-const Plan = ({ todo, remove, history }) => {
-  const pushRouter = (id: number) => {
-    history.push("/plan");
-  };
-  return (
-    <div style={one} onClick={() => pushRouter(todo.id)}>
-      {todo.title}
-      <Icon
-        style={{
-          fontSize: "18px",
-          float: "right",
-          cursor: "pointer",
-          lineHeight: "25px"
-        }}
-        onClick={() => remove(todo.id)}
-        fontSize="large"
-      >
-        delete
-      </Icon>
-    </div>
-  );
+const Plan = props => {
+  const [plan] = useState(props.location.state[0]);
+
+  useEffect(() => {
+    console.log(plan);
+  });
+  return <div>{plan.title}</div>;
 };
 
 export default withRouter(Plan);

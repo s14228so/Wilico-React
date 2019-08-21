@@ -4,7 +4,7 @@ import "./plans.scss";
 
 const Plans = ({ plans, remove }) => {
   const items = plans.map(plan => {
-    return <Plan key={plan.id} todo={plan} remove={remove} />;
+    return <Plan key={plan.id} plan={plan} remove={remove} />;
   });
   return <div>{items}</div>;
 };

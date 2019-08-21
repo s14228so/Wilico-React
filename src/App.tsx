@@ -7,6 +7,7 @@ import Plans from "./containers/Plans";
 import Header from "./components/layout/Header";
 import Home from "./pages/Home";
 import AddTodo from "./containers/AddTodo";
+import Plan from "./components/Plan";
 import "./Reset.css";
 import { init } from "./actions";
 import { connect } from "react-redux";
@@ -22,14 +23,15 @@ const App: FunctionComponent = (): JSX.Element => {
     <React.Fragment>
       <Router>
         <Header />
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={Plans} />
         <Route path="/about" component={About} />
+        <Route path="/plan" component={Plan} />
         <Route
           path="/todo"
           render={props => (
             <React.Fragment>
               <AddTodo />
-              <Plans />
+              <Home />
             </React.Fragment>
           )}
         />

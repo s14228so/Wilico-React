@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
 import Todo from "../types/todo";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./home.scss";
 const Home: React.SFC = (): JSX.Element => {
@@ -11,14 +12,14 @@ const Home: React.SFC = (): JSX.Element => {
       <div className="nav">
         <div className="nav-in">
           <div className="wilico">
-            <Link>Wilico</Link>
+            <Link to={"/"}>Wilico</Link>
           </div>
           <div className="setting">{/* <setting /> */}</div>
         </div>
       </div>
       <div className="top">
         <div className="top-image">
-          <img src="@/assets/img/index.jpg" />
+          <img src="/public/img/index.jpg" />
           <div className="black-back" />
         </div>
         <div className="catch-copy">
@@ -27,9 +28,7 @@ const Home: React.SFC = (): JSX.Element => {
           <p className="concept">もっと、健康に。</p>
         </div>
         <div className="user-button">
-          <button type="button" onClick="goRegi">
-            新規登録
-          </button>
+          <button type="button">新規登録</button>
         </div>
         <p className="coach">
           {/* <nuxt-link to="/index_coach">管理栄養士の方はこちら</nuxt-link> */}
@@ -64,10 +63,10 @@ const Home: React.SFC = (): JSX.Element => {
         <div className="feature-element">
           <div className="img-box">
             <div className="user-mypage card1">
-              <img src="@/assets/img/chat.png" alt="メッセージ" />
+              <img src="/public/img/chat.png" alt="メッセージ" />
             </div>
             <div className="timeline card1">
-              <img src="@/assets/img/TimeLine.png" alt="タイムライン" />
+              <img src="/public/img/TimeLine.png" alt="タイムライン" />
             </div>
           </div>
           <div className="content">
@@ -92,17 +91,17 @@ const Home: React.SFC = (): JSX.Element => {
           </div>
           <div>
             <div className="plan-index card2">
-              <img src="@/assets/img/planIndex.png" alt="プラン一覧" />
+              <img src="/public/img/planIndex.png" alt="プラン一覧" />
             </div>
           </div>
         </div>
         <div className="feature-element">
           <div className="img-box card1">
             <div className="user-mypage">
-              <img src="@/assets/img/mypage.png" alt="マイページ" />
+              <img src="/public/img/mypage.png" alt="マイページ" />
             </div>
             <div className="timeline card1">
-              <img src="@/assets/img/planShow.png" alt="プラン詳細" />
+              <img src="/public/img/planShow.png" alt="プラン詳細" />
             </div>
           </div>
           <div className="content">

@@ -19,7 +19,8 @@ const App: FunctionComponent = (): JSX.Element => {
     <React.Fragment>
       <Router>
         <Header />
-        <Route exact path="/" component={Plans} />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/plans" component={Plans} />
         <Route path="/about" component={About} />
         <Route path="/plan" component={IndividualPlan} />
         <Route path="/planCreate" component={PlanCreate} />

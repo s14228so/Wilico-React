@@ -35,7 +35,8 @@ const rules = [
   }
 ];
 module.exports = {
-  target: "node",
+  devtool: "#eval-source-map",
+  target: "web",
   mode: "development",
   entry: ["@babel/polyfill", "./src/index.tsx"],
   output: {

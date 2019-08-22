@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { FunctionComponent, useState, useEffect } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import About from "./pages/About";
+import { hot } from "react-hot-loader";
 import Plans from "./containers/Plans";
 import IndividualPlan from "./components/IndivisualPlan";
 import Header from "./components/layout/Header";
@@ -41,8 +42,9 @@ const App: FunctionComponent = (): JSX.Element => {
     </React.Fragment>
   );
 };
-
-export default connect(
-  null,
-  { init }
-)(App);
+export default hot(module)(
+  connect(
+    null,
+    { init }
+  )(App)
+);

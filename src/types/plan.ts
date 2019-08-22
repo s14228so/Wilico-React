@@ -1,5 +1,6 @@
 export default interface Plan {
-  id: string;
+  id: number;
   title: string;
+  body: string;
   price: number;
 }

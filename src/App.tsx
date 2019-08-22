@@ -15,12 +15,6 @@ import { init } from "./actions";
 import { connect } from "react-redux";
 
 const App: FunctionComponent = (): JSX.Element => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(init());
-  });
-
   return (
     <React.Fragment>
       <Router>
@@ -42,9 +36,4 @@ const App: FunctionComponent = (): JSX.Element => {
     </React.Fragment>
   );
 };
-export default hot(module)(
-  connect(
-    null,
-    { init }
-  )(App)
-);
+export default hot(module)(App);

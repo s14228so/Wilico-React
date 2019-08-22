@@ -10,10 +10,11 @@ const one = {
 
   padding: "10px 20px"
 };
-const PlanOne = ({ plan, remove, history }) => {
+const PlanOne = ({ plan, history }) => {
   const pushRouter = (plan: Plan) => {
     history.push("/plan", [plan]);
   };
+
   return (
     <div style={one} onClick={() => pushRouter(plan)}>
       {plan.title}
@@ -24,7 +25,6 @@ const PlanOne = ({ plan, remove, history }) => {
           cursor: "pointer",
           lineHeight: "25px"
         }}
-        onClick={() => remove(plan.id)}
         fontSize="large"
       >
         delete

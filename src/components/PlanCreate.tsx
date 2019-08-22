@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router";
 import axios from "axios";
+import Plan from "../types/plan";
 const PlanCreate = props => {
-  const [plan, setPlan] = useState(props.plan);
+  console.log(props);
+  const [plan, setPlan] = useState<Plan>(props.plan);
   useEffect(() => {});
   const handleSubmit = e => {
     e.preventDefault();
@@ -12,9 +14,7 @@ const PlanCreate = props => {
       })
       .then(res => {
         console.log(res.data);
-        props.history.push({
-          path: "/"
-        });
+        props.history.push("/plan", [plan]);
       });
   };
   return (
@@ -33,10 +33,11 @@ const PlanCreate = props => {
           <label htmlFor="price">料金</label>
           <input
             id="price"
-            placeholder="円"
-            type="text"
+            type="number"
             value={plan.price}
-            onChange={e => setPlan({ ...plan, price: e.target.value })}
+            onChange={e =>
+              setPlan({ ...plan, price: parseInt(e.target.value) })
+            }
           />
         </div>
         <div>
@@ -62,7 +63,7 @@ PlanCreate.defaultProps = {
   plan: {
     title: "",
     body: "",
-    price: "",
+    price: 0,
     coach_id: 1
   }
 };

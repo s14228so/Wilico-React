@@ -7,7 +7,7 @@ const Plan = props => {
   useEffect(() => {
     console.log(plan);
   });
-  return <div>{plan.title}</div>;
+  return <div className="container mt-3">{plan.title}</div>;
 };
 
 export default withRouter(Plan);

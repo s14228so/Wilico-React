@@ -7,7 +7,7 @@ const one = {
   borderBottom: "1px #000 dotted",
   width: "50%",
   margin: "10px auto",
-
+  cursor: "pointer",
   padding: "10px 20px"
 };
 const PlanOne = ({ plan, history }) => {
@@ -16,19 +16,12 @@ const PlanOne = ({ plan, history }) => {
   };
 
   return (
-    <div style={one} onClick={() => pushRouter(plan)}>
+    <div
+      className="mt-5 container"
+      style={one}
+      onClick={() => pushRouter(plan)}
+    >
       {plan.title}
-      <Icon
-        style={{
-          fontSize: "18px",
-          float: "right",
-          cursor: "pointer",
-          lineHeight: "25px"
-        }}
-        fontSize="large"
-      >
-        delete
-      </Icon>
     </div>
   );
 };

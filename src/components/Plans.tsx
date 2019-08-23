@@ -13,7 +13,7 @@ const Plans = ({ plans }) => {
   const items = plans.map(plan => {
     return <Plan key={plan.id} plan={plan} />;
   });
-  return <div>{items}</div>;
+  return <div className="mt-5 container">{items}</div>;
 };
 
 export default Plans;

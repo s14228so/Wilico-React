@@ -9,14 +9,6 @@ const Home: React.SFC = (): JSX.Element => {
 
   return (
     <div className="index">
-      <div className="nav">
-        <div className="nav-in">
-          <div className="wilico">
-            <Link to={"/"}>Wilico</Link>
-          </div>
-          <div className="setting">{/* <setting /> */}</div>
-        </div>
-      </div>
       <div className="top">
         <div className="top-image">
           <img src="/public/img/index.jpg" />
@@ -129,7 +121,7 @@ const Home: React.SFC = (): JSX.Element => {
                   </p>
                 </div>
                 <div className="img-box">
-                  <img src="@/assets/img/coach.png" alt="専属のコーチ" />
+                  <img src="/public/img/coach.png" alt="専属のコーチ" />
                 </div>
               </div>
             </div>
@@ -142,7 +134,7 @@ const Home: React.SFC = (): JSX.Element => {
                   </p>
                 </div>
                 <div className="img-box">
-                  <img src="@/assets/img/wherever.png" alt="専属のコーチ" />
+                  <img src="/public/img/wherever.png" alt="専属のコーチ" />
                 </div>
               </div>
             </div>
@@ -155,7 +147,7 @@ const Home: React.SFC = (): JSX.Element => {
                   </p>
                 </div>
                 <div className="img-box">
-                  <img src="@/assets/img/meal.png" alt="専属のコーチ" />
+                  <img src="/public/img/meal.png" alt="専属のコーチ" />
                 </div>
               </div>
             </div>
@@ -168,7 +160,7 @@ const Home: React.SFC = (): JSX.Element => {
                   </p>
                 </div>
                 <div className="img-box">
-                  <img src="@/assets/img/hapiness.png" alt="専属のコーチ" />
+                  <img src="/public/img/hapiness.png" alt="専属のコーチ" />
                 </div>
               </div>
             </div>

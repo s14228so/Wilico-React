@@ -5,14 +5,14 @@ const Header = () => {
   const style = {
     textDecoration: "none",
     color: "#000",
-    lineHeight: "70px",
+    lineHeight: "50px",
     fontSize: "12px"
   };
 
   const links = [
     {
       title: "プラン一覧",
-      path: "/"
+      path: "/plans"
     },
     {
       title: "About",
@@ -24,12 +24,6 @@ const Header = () => {
     }
   ];
 
-  const header = {
-    width: "100vw",
-    background: "lightGray",
-    height: "70px"
-  };
-
   const items = links.map((item, i) => {
     return (
       <Link style={style} key={i} to={item.path}>
@@ -38,18 +32,19 @@ const Header = () => {
     );
   });
   return (
-    <header style={header}>
-      <ul
-        style={{
-          listStyle: "none",
-          display: "flex",
-          width: "25vw",
-          justifyContent: "space-around"
-        }}
-      >
-        {items}
-      </ul>
-    </header>
+    <div className="nav">
+      <div className="nav-in">
+        <div
+          className="wilico"
+          style={{ display: "flex", justifyContent: "space-around" }}
+        >
+          <Link to={"/"}>Wilico</Link>
+          {items}
+        </div>
+
+        <div className="setting">{/* <setting /> */}</div>
+      </div>
+    </div>
   );
 };
 

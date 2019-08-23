@@ -8,6 +8,7 @@ const PlanCreate = props => {
   useEffect(() => {});
   const handleSubmit = e => {
     e.preventDefault();
+    console.log(plan);
     axios
       .post("http://localhost:8080/plans", plan, {
         headers: { "Content-Type": "application/json" }
@@ -19,7 +20,7 @@ const PlanCreate = props => {
   };
   return (
     <>
-      <form onSubmit={handleSubmit} className="container mt-3">
+      <form onSubmit={handleSubmit} className="container mt-5">
         <div>
           <label htmlFor="title">タイトル</label>
           <input
@@ -64,7 +65,7 @@ PlanCreate.defaultProps = {
     title: "",
     body: "",
     price: 0,
-    coach_id: 1
+    coachid: 6
   }
 };
 

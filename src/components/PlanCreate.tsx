@@ -5,7 +5,30 @@ import Plan from "../types/plan";
 const PlanCreate = props => {
   console.log(props);
   const [plan, setPlan] = useState<Plan>(props.plan);
+  const [file, setFile] = useState();
   useEffect(() => {});
+
+  const fileChange = e => {
+    setFile(e.target.files[0]);
+  };
+  const fileSubmit = e => {
+    e.preventDefault();
+    const params = new FormData();
+
+    params.append(file.name, file);
+    console.log(params);
+    axios
+      .post("http://localhost:8080/upload", params, {
+        headers: { "Content-Type": "multipart/form-data" }
+      })
+      .then(res => {
+        console.log("ok");
+        console.log(res.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
   const handleSubmit = e => {
     e.preventDefault();
     console.log(plan);
@@ -55,6 +78,11 @@ const PlanCreate = props => {
           />
           <input type="submit" />
         </div>
+      </form>
+
+      <form onSubmit={fileSubmit}>
+        <input type="file" onChange={fileChange} multiple />
+        <input type="submit" value="ファイルを送信" />
       </form>
     </>
   );
